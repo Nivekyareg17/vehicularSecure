@@ -1,17 +1,18 @@
 package com.example.segurosMeca_col.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Seguro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idSeguro;
-
-    @Column(nullable = false, length = 100)
-    private String id_Seguro;
 
     @Column(nullable = false, length = 100)
     private String compania;
@@ -24,5 +25,9 @@ public class Seguro {
 
     @Column (nullable = false,length = 100)
     private String fechaVencimiento;
+
+    @OneToOne
+    @JoinColumn(name = "idVehiculo", nullable = false)
+    private Vehiculo vehiculo;
 
 }
