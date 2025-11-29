@@ -35,5 +35,9 @@ public class Vehiculo {
     @Column(nullable = false)
     private VehiculoTypeC tipoGVehiculo;
 
+    @OneToOne
+    @JoinColumn(name = "idConductor", nullable = false)
+    private Conductor conductor;
+
 
 }
