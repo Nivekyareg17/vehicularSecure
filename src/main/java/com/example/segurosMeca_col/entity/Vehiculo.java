@@ -1,5 +1,6 @@
 package com.example.segurosMeca_col.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -36,8 +37,7 @@ public class Vehiculo {
     private VehiculoTypeC tipoGVehiculo;
 
     @OneToOne
-    @JoinColumn(name = "idConductor", nullable = false)
+    @JoinColumn(name = "idConductor",referencedColumnName = "idConductor", nullable = false)
     private Conductor conductor;
-
 
 }

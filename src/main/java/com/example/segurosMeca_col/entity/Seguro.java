@@ -14,6 +14,9 @@ public class Seguro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idSeguro;
 
+    @Column (nullable = false, length = 100)
+    private String idSeguros;
+
     @Column(nullable = false, length = 100)
     private String compania;
 

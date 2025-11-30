@@ -20,13 +20,13 @@ public class Conductor {
     @Column (nullable = false, length = 100)
     private String licencia;
 
-    @Column (nullable = false, length = 10)
-    private Integer telefono;
+    @Column (nullable = false, length = 11)
+    private String telefono;
 
     @Column (nullable = false, length = 100)
     private String direccion;
 
-    @Column (nullable = false, length = 100)
+    @Column (nullable = false)
     private Boolean activo;
 
 }
